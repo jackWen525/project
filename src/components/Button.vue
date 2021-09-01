@@ -11,8 +11,8 @@ const props = defineProps({
     default: "",
   },
 });
-let emit = defineEmits(["fn"])
-emit("fn",20)
+let emit = defineEmits(["fn"]);
+emit("fn", 20);
 </script>
 
 <style lang="scss">
@@ -52,5 +52,39 @@ emit("fn",20)
     border-color: #85ce61;
     color: #fff;
   }
+}
+.info {
+  color: #fff;
+  background-color: #767980;
+  border: 1px solid #909399;
+
+  &:hover {
+    background: #909399;
+    border-color: #767980;
+    color: #fff;
+  }
+}
+.warning {
+  color: #fff;
+  background-color: #d48a1b;
+  border: 1px solid #d48a1b;
+
+  &:hover {
+    background-color: #e6a23c;
+    border-color: #e6a23c;
+    color: #fff;
+  }
+}
+.danger {
+  color: #fff;
+  background-color: #f23c3c;
+  border: 1px solid #f23c3c;
+
+  &:hover {
+    background-color: #f56c6c;
+    border-color: #f56c6c;
+    color: #fff;
+  }
+
 }
 </style>
