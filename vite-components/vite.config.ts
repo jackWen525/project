@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [vue()],
   cssPreprocessOptions: {
     scss: {
-      additionalData: '@import "./src/assets/scss/style.scss";' // 添加公共样式
+      additionalData: '@import "./src/styles/style.scss";' // 添加公共样式
     }
   }
 })

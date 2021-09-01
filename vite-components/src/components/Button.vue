@@ -1,33 +1,56 @@
 <template>
-  <button class="button">
-      <slot></slot>
+  <button class="button" :class="type">
+    <slot></slot>
   </button>
 </template>
 
 <script lang="ts" setup>
-import {defineEmits} from "vue"
 const props = defineProps({
-    type:{
-        type:String,
-        default:""
-    }
-})
+  type: {
+    type: String,
+    default: "",
+  },
+});
+let emit = defineEmits(["fn"])
+emit("fn",20)
 </script>
 
 <style lang="scss">
 @import "../styles/index.scss";
 .button {
-    box-sizing: border-box;
-    width: 98px;
-    height: 40px;
-    color: $--el-text-color-regular;
-    border: 1px solid $--el-border-color-base;
-    background-color: #F0F7FF;
-    border-radius: $--el-border-radius-base;
-    transition: all .3 ease-out;
-    &:hover {
-        background-color: $--el-color-primary-light-8;
-        color: $--el-color-primary-light-1;
-    }
+  box-sizing: border-box;
+  width: 98px;
+  height: 40px;
+  color: $--el-text-color-regular;
+  border: 1px solid $--el-border-color-base;
+  background-color: #f0f7ff;
+  border-radius: $--el-border-radius-base;
+  transition: all 0.3 ease-out;
+  &:hover {
+    background-color: $--el-color-primary-light-8;
+    color: $--el-color-primary-light-1;
+  }
+}
+.primary {
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+
+  &:hover {
+    background: #66b1ff;
+    border-color: #66b1ff;
+    color: #fff;
+  }
+}
+.success {
+  color: #fff;
+  background-color: #67c23a;
+  border-color: #67c23a;
+
+  &:hover {
+    background: #85ce61;
+    border-color: #85ce61;
+    color: #fff;
+  }
 }
 </style>
