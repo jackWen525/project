@@ -1,20 +1,18 @@
 <template>
   <div class="btn-view">
-    <Button @fn="fn">默认按钮</Button>
+    <!-- <Button round plain>默认按钮</Button>
     <Button type="primary">主要</Button>
     <Button type="success">成功</Button>
     <Button type="info">默认按钮</Button>
     <Button type="warning">主要</Button>
-    <Button type="danger">成功</Button>
+    <Button type="danger">成功</Button> -->
   </div>
+  <Calendar/>
 </template>
 
 <script lang="ts" setup>
 import Button from "./components/Button.vue";
-function fn(e) {
-  console.log(e);
-  
-}
+import Calendar from "./components/Calendar.vue"
 </script>
 
 <style lang="scss">
@@ -29,6 +27,9 @@ function fn(e) {
     button {
       margin-right: 10px;
     }
+  }
+  li,ul {
+    list-style-type:none;
   }
 }
 </style>

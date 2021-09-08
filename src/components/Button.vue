@@ -1,5 +1,8 @@
 <template>
-  <button class="button" :class="type">
+  <button
+    class="button"
+    :class="[type, round ? 'round' : '', plain ? 'plain' : '']"
+  >
     <slot></slot>
   </button>
 </template>
@@ -10,9 +13,15 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  round: {
+    type: Boolean,
+    default: false,
+  },
+  plain: {
+    type: Boolean,
+    default: false,
+  },
 });
-let emit = defineEmits(["fn"]);
-emit("fn", 20);
 </script>
 
 <style lang="scss">
@@ -30,12 +39,19 @@ emit("fn", 20);
     background-color: $--el-color-primary-light-8;
     color: $--el-color-primary-light-1;
   }
+  .plain {
+    background-color: #fff;
+  }
 }
+
+.round {
+  border-radius: 20px;
+}
+
 .primary {
   color: #fff;
   background-color: #409eff;
   border-color: #409eff;
-
   &:hover {
     background: #66b1ff;
     border-color: #66b1ff;
@@ -85,6 +101,5 @@ emit("fn", 20);
     border-color: #f56c6c;
     color: #fff;
   }
-
 }
 </style>
