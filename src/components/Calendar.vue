@@ -33,7 +33,7 @@ let day = ["一", "二", "三", "四", "五", "六"];
 // 一个月多少天
 let days = ref(new Date(year, month, 0).getDate());
 // 获取每个月份是星期几
-function getDay(d?) {
+function getDay(d?): Number {
   let num = d || month;
   let day = new Date(year, num - 1, 1).getDay();
   let res = 0;
@@ -70,7 +70,7 @@ function getDan() {
   let month = tim.getMonth() + 1;
   days.value = new Date(year, month, 0).getDate();
   dates.value = `${year} 年 ${month} 月`;
-  da.value = getDay(month-1);
+  da.value = getDay(month - 1);
 }
 let da = ref(getDay());
 // 月份修改
