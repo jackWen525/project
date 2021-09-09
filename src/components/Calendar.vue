@@ -65,12 +65,11 @@ function getDay(d?): Number {
   return res;
 }
 function getDan() {
-  let year = tim.getFullYear();
-  // 月
-  let month = tim.getMonth() + 1;
+  year = tim.getFullYear();
+  month = tim.getMonth() + 1;
   days.value = new Date(year, month, 0).getDate();
   dates.value = `${year} 年 ${month} 月`;
-  da.value = getDay(month - 1);
+  da.value = getDay();
 }
 let da = ref(getDay());
 // 月份修改
